@@ -1,0 +1,20 @@
+# 数据配置
+data:
+  data_path: "your_coco_path"  # 需替换为你的COCO数据集根路径
+  img_size: 640                # 输入图像尺寸
+  num_classes: 80              # COCO数据集类别数
+
+# 训练配置
+train:
+  epochs: 50                   # 训练轮次
+  batch_size: 16               # 批次大小（GPU显存不足可设8/4）
+  init_lr: 0.001               # 初始学习率
+  weight_decay: 0.0005         # 权重衰减（防过拟合）
+  num_workers: 4               # 数据加载线程数
+  save_path: "runs/train"      # 模型/日志保存路径
+
+# 评估配置
+eval:
+  conf_thres: 0.3              # 置信度阈值（筛选预测框）
+  iou_thres: 0.45              # NMS IoU阈值
+  vis_save_path: "runs/visualization"  # 可视化结果保存路径

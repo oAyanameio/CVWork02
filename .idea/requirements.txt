@@ -1,0 +1,11 @@
+# 基础依赖
+python==3.9
+torch==2.0.1
+torchvision==0.15.2
+numpy==1.25.2
+matplotlib==3.7.1
+opencv-python==4.8.0.76
+pycocotools==2.0.6
+tqdm==4.65.0
+PyYAML==6.0.1  # 读取配置文件
+wandb==0.15.8  # 可选，训练日志可视化（无需可注释）

@@ -1,0 +1,35 @@
+# 1. 路径配置（用户需根据自己的数据集位置修改）
+data:
+  dataset_type: "coco"  # 可选：coco / voc
+  train_img_dir: "coco2017/train2017"
+  train_ann_path: "coco2017/annotations/instances_train2017.json"
+  val_img_dir: "coco2017/val2017"
+  val_ann_path: "coco2017/annotations/instances_val2017.json"
+  img_size: 640         # 输入图像尺寸（YOLOv5默认640）
+
+# 2. 训练超参数
+train:
+  batch_size: 16        # 根据GPU显存调整（1060→8，3090→32）
+  epochs: 50            # 作业场景50轮足够收敛
+  lr: 0.001             # 初始学习率
+  weight_decay: 0.0005  # 权重衰减（防过拟合）
+  val_interval: 5       # 每5轮验证一次
+  save_dir: "weights/"  # 权重保存路径
+
+# 3. 模型配置
+model:
+  num_classes: 80       # COCO→80类，VOC→20类
+  pretrained: True      # 是否加载预训练权重
+  pretrained_weight_path: "yolov5s.pt"  # 预训练权重路径（需自行下载）
+
+# 4. 评估配置
+eval:
+  conf_thres: 0.3       # 置信度阈值（过滤低置信预测）
+  iou_thres: 0.45       # NMS的IoU阈值
+  result_dir: "results/"# 可视化结果保存路径
+
+# 5. YOLOv5锚框配置（无需修改）
+anchors:
+  - [10,13, 16,30, 33,23]   # 32x尺度（大目标）
+  - [30,61, 62,45, 59,119]  # 16x尺度（中目标）
+  - [116,90, 156,198, 373,326]  # 8x尺度（小目标）

@@ -1,0 +1,14 @@
+name: cvwork2  # 环境名和你现有环境一致，直接覆盖修复
+channels:
+  - conda-forge  # 优先用conda-forge（国内适配好，无图形依赖）
+  - defaults
+dependencies:
+  - python=3.10  # 和你现有环境Python版本一致
+  - numpy=1.26.4  # 固定1.x版本，兼容OpenCV
+  - opencv-headless=4.8.0  # 无GUI的OpenCV，无需libGL
+  - pip=24.0
+  - pip:
+    - ultralytics==8.0.196  # 保留load_dataset的稳定版本
+    - pillow>=10.0.0  # YOLO图像读取依赖
+    - matplotlib>=3.7.0  # 可视化依赖（无GUI也能保存图片）
+    - pyyaml>=6.0  # 数据集配置文件解析

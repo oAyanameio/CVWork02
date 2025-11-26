@@ -1,0 +1,16 @@
+Running full pipeline: visualize_samples → train → eval → analyze_hard
+  0%|          | 0.00/4.52k [00:00<?, ?B/s]100%|██████████| 4.52k/4.52k [00:00<00:00, 10.2MB/s]
+Traceback (most recent call last):
+  File "/home/lbh/CVWork2/assignment2_full.py", line 631, in <module>
+    generate_class_visuals(CFG, samples_per_class=args.samples_per_class)
+  File "/home/lbh/CVWork2/assignment2_full.py", line 576, in generate_class_visuals
+    ds = VOCWrapperAuto(cfg['dataset_root'], year=cfg['year'], image_set=cfg['val_set'], transforms=DetectionAugment(min_size=cfg['min_size'], hflip_prob=0.0))
+  File "/home/lbh/CVWork2/assignment2_full.py", line 185, in __init__
+    self.base = VOCDetection(root, year=year, image_set=image_set, download=True)
+  File "/home/lbh/.conda/envs/cvwork02/lib/python3.10/site-packages/torchvision/datasets/voc.py", line 98, in __init__
+    download_and_extract_archive(self.url, self.root, filename=self.filename, md5=self.md5)
+  File "/home/lbh/.conda/envs/cvwork02/lib/python3.10/site-packages/torchvision/datasets/utils.py", line 391, in download_and_extract_archive
+    download_url(url, download_root, filename, md5)
+  File "/home/lbh/.conda/envs/cvwork02/lib/python3.10/site-packages/torchvision/datasets/utils.py", line 140, in download_url
+    raise RuntimeError("File not found or corrupted.")
+RuntimeError: File not found or corrupted.

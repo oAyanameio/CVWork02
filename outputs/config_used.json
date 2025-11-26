@@ -1,0 +1,19 @@
+{
+  "dataset_root": "./VOCdevkit",
+  "year": "2012",
+  "train_set": "train",
+  "val_set": "val",
+  "num_classes": 21,
+  "batch_size": 4,
+  "num_workers": 4,
+  "lr": 0.005,
+  "momentum": 0.9,
+  "weight_decay": 0.0005,
+  "num_epochs": 12,
+  "save_dir": "./outputs",
+  "device": "cuda",
+  "min_size": 600,
+  "visualize_score_thresh": 0.5,
+  "small_object_area": 1024,
+  "occlusion_iou_thresh": 0.5
+}

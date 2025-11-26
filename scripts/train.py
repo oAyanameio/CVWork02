@@ -1,4 +1,5 @@
 import os
+import sys
 import yaml
 import torch
 import torch.optim as optim
@@ -6,10 +7,12 @@ from torch.utils.data import DataLoader
 import numpy as np
 from tqdm import tqdm
 from typing import Dict
-
+project_root = '/home/lbh/CVWork2'
+if project_root not in sys.path:
+    sys.path.append(project_root)
 # 导入自定义模块
 from data.dataset import COCODataset, collate_fn
-from models.yolov5 import init_yolov5_model
+from models.yolo5 import init_yolov5_model
 from models.loss import YOLOLoss
 from utils.evaluation import evaluate_coco
 from utils.visualization import create_result_dirs, visualize_data_samples, plot_train_logs

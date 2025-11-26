@@ -40,7 +40,7 @@ from torchvision.datasets import VOCDetection
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from torchvision.ops import box_iou
 from tqdm import tqdm
-
+from data.dataset import COCODataset
 # ---------------------------
 # 配置（可修改）
 # ---------------------------

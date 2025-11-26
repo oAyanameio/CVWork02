@@ -1,7 +1,4 @@
-Running full pipeline: visualize_samples → train → eval → analyze_hard
 Traceback (most recent call last):
-  File "/home/lbh/CVWork2/assignment2_full.py", line 636, in <module>
-    generate_class_visuals(CFG, samples_per_class=args.samples_per_class)
-  File "/home/lbh/CVWork2/assignment2_full.py", line 576, in generate_class_visuals
-    ds = COCODataset(
-NameError: name 'COCODataset' is not defined
+  File "/home/lbh/CVWork2/assignment2_full.py", line 43, in <module>
+    from data.dataset import COCODataset
+ModuleNotFoundError: No module named 'data'

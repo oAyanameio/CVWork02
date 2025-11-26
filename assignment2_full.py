@@ -573,7 +573,12 @@ def analyze_hard_cases(cfg, model_path=None, save_n=100):
 # ---------------------------
 
 def generate_class_visuals(cfg, samples_per_class=5):
-    ds = VOCWrapperAuto(cfg['dataset_root'], year=cfg['year'], image_set=cfg['val_set'], transforms=DetectionAugment(min_size=cfg['min_size'], hflip_prob=0.0))
+    ds = COCODataset(
+        img_dir=cfg['data']['val_img_dir'],  # COCO验证集图像路径
+        ann_path=cfg['data']['val_ann_path'],  # COCO验证集标注路径
+        img_size=cfg['data']['img_size'],
+        augment=False  # 可视化无需增强
+    )
     out_dir = os.path.join(cfg['save_dir'], 'class_samples')
     os.makedirs(out_dir, exist_ok=True)
     examples = defaultdict(list)

@@ -1,11 +1,12 @@
 # 1. 路径配置（用户需根据自己的数据集位置修改）
+# config.yaml 中 data 部分配置
 data:
-  dataset_type: "coco"  # 可选：coco / voc
-  train_img_dir: "coco2017/train2017"
-  train_ann_path: "coco2017/annotations/instances_train2017.json"
-  val_img_dir: "coco2017/val2017"
-  val_ann_path: "coco2017/annotations/instances_val2017.json"
-  img_size: 640         # 输入图像尺寸（YOLOv5默认640）
+  dataset_type: "coco"
+  train_img_dir: "../coco2017/train2017"  # scripts目录相对coco2017的路径
+  train_ann_path: "../coco2017/annotations/instances_train2017.json"
+  val_img_dir: "../coco2017/val2017"
+  val_ann_path: "../coco2017/annotations/instances_val2017.json"
+  img_size: 640  # 若GPU显存不足，可改为480
 
 # 2. 训练超参数
 train:
